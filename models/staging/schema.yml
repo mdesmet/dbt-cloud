@@ -1,0 +1,43 @@
+version: 2
+models:
+  - name: stg_customers
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+  - name: stg_orders
+    description: ""
+    columns:
+      - name: ORDER_ID
+        description: ""
+      - name: CUSTOMER_ID
+        description: ""
+      - name: ORDER_DATE
+        description: ""
+      - name: STATUS
+        description: ""
+      - name: T2
+        description: ""
+      - name: T3
+        description: ""
+      - name: T4
+        description: ""
+      - name: T5
+        description: ""
+      - name: T6
+        description: ""
+  - name: stg_payments
+    columns:
+      - name: payment_id
+        tests:
+          - unique
+          - not_null
+      - name: payment_method
+        tests:
+          - accepted_values:
+              values:
+                - credit_card
+                - coupon
+                - bank_transfer
+                - gift_card
